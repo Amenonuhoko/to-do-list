@@ -8,7 +8,7 @@ import "./Cards.css";
 // Redux
 import { editCardTitle } from "../Actions";
 // Component
-import Todos from "./Todos";
+import ToDo from "./ToDo";
 
 const Cards = (props) => {
 	// STATES
@@ -79,19 +79,20 @@ const Cards = (props) => {
 								type="primary"
 								size="medium"
 								onPress={handleComplete}
-							></AwesomeButton>
+							>
+								NOT COMPLETED
+							</AwesomeButton>
 						)}
 					</div>
 				</div>
 			</div>
-			<div>{collapse ? <Todos /> : null}</div>
+			<div>{collapse ? <ToDo /> : null}</div>
 		</div>
 	);
 };
 
 const mapStateToProps = (state) => {
 	return {
-		todos: state,
 		title: state.addCard,
 	};
 };

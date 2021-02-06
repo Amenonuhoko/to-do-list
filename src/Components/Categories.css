@@ -1,8 +1,8 @@
 .title {
 	margin-left: 20px;
-	color: gray;
+	color: black;
 }
-.header-card {
+/* .header-card {
 	margin-top: 100px;
 	min-height: 200px;
 	display: flex;
@@ -10,13 +10,16 @@
 	box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
 		rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 	background-color: #282c34;
-}
+} */
 .container {
-	margin: 40px 80px;
+	margin: 20px 40px;
 }
 .add-card-button {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	margin: 20px 20px;
+}
+.add-card-button input {
+	font-size: 80px;
 }
