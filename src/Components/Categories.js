@@ -1,6 +1,5 @@
 // Default
 import React, { useState } from "react";
-import { AwesomeButton } from "react-awesome-button";
 import { connect } from "react-redux";
 // CSS
 import "./Categories.css";
@@ -60,42 +59,42 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(Categories);
 
-const CategoryChildrenContent = () => {
-	return (
-		<div>
-			<div
-				style={{
-					display: "flex",
-					justifyContent: "space-between",
-				}}
-			>
-				<div>
-					<AwesomeButton>+</AwesomeButton>
-				</div>
-				<div className="title">
-					<input placeholder="Things To Do" type="text"></input>
-				</div>
-				{/* collapsible desc */}
-				<div className="description">
-					<p></p>
-				</div>
-				<div
-					className="Category buttons"
-					style={{ display: "flex", justifyContent: "space-between" }}
-				>
-					<AwesomeButton type="secondary"> Category</AwesomeButton>
-					<AwesomeButton type="secondary"> Finished </AwesomeButton>
-				</div>
-			</div>
-			{/* <div> IF ELSE HERE </div> */}
-		</div>
-	);
-};
+// const CategoryChildrenContent = () => {
+// 	return (
+// 		<div>
+// 			<div
+// 				style={{
+// 					display: "flex",
+// 					justifyContent: "space-between",
+// 				}}
+// 			>
+// 				<div>
+// 					<AwesomeButton>+</AwesomeButton>
+// 				</div>
+// 				<div className="title">
+// 					<input placeholder="Things To Do" type="text"></input>
+// 				</div>
+// 				{/* collapsible desc */}
+// 				<div className="description">
+// 					<p></p>
+// 				</div>
+// 				<div
+// 					className="Category buttons"
+// 					style={{ display: "flex", justifyContent: "space-between" }}
+// 				>
+// 					<AwesomeButton type="secondary"> Category</AwesomeButton>
+// 					<AwesomeButton type="secondary"> Finished </AwesomeButton>
+// 				</div>
+// 			</div>
+// 			{/* <div> IF ELSE HERE </div> */}
+// 		</div>
+// 	);
+// };
 
-const SubList = () => {
-	return (
-		<ul>
-			<li></li>
-		</ul>
-	);
-};
+// const SubList = () => {
+// 	return (
+// 		<ul>
+// 			<li></li>
+// 		</ul>
+// 	);
+// };
