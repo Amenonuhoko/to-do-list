@@ -1,30 +1,51 @@
-import React from "react";
+// Default
+import React, { useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
-import { addCard } from "../Actions";
 import { connect } from "react-redux";
+// CSS
+import "./Categories.css";
+// Redux
+import { addCard } from "../Actions";
+// Components
 import Cards from "./Cards";
-import "react-awesome-button/dist/styles.css";
-import "./CategoryView.css";
 
 // The Rest
-const CategoryView = (props) => {
-	const addNewCard = () => props.dispatch(addCard());
-
+const Categories = (props) => {
+	// State
+	const [cardTitle, setCardTitle] = useState("");
+	// Handle
+	const handleChange = (e) => {
+		setCardTitle(e.target.value);
+	};
+	const handlePress = (e) => {
+		if (e.key === "Enter") {
+			const content = {
+				text: cardTitle,
+			};
+			props.dispatch(addCard(content));
+		}
+	};
 	return (
 		<div className="container">
-			<div className="header">
+			<div className="header-card">
 				<div className="title">
 					<h1>To Do List</h1>
 				</div>
 
 				<div className="add-card-button">
-					<AwesomeButton onPress={addNewCard} size="large">
-						+
-					</AwesomeButton>
+					<input
+						placeholder="Add To Dos"
+						name="title"
+						type="text"
+						autoComplete="off"
+						value={cardTitle}
+						onChange={handleChange}
+						onKeyDown={handlePress}
+					></input>
 				</div>
 			</div>
 			{props.cards.map((el, i) => {
-				return <Cards key={i} />;
+				return <Cards key={i} id={el.cardID} />;
 			})}
 		</div>
 	);
@@ -36,48 +57,8 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps)(CategoryView);
+export default connect(mapStateToProps)(Categories);
 
-const CategoryChildren = ({ allToDo }) => {
-	return (
-		<div
-			className="children-container"
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				alignContent: "space-evenly",
-			}}
-		>
-			{/* first child List */}
-			<ul
-				style={{
-					listStyleType: "none",
-					padding: 0,
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "space-around",
-					marginTop: 10,
-					marginBottom: 10,
-					marginLeft: 40,
-				}}
-			>
-				{/* {childLists.map((el, i) => {
-					return (
-						<li key={i}>
-							<CategoryChildrenContent />
-						</li>
-					);
-				})} */}
-
-				<li>
-					<div className="new-list-button">
-						<AwesomeButton>+</AwesomeButton>
-					</div>
-				</li>
-			</ul>
-		</div>
-	);
-};
 const CategoryChildrenContent = () => {
 	return (
 		<div>

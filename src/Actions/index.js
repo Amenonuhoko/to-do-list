@@ -1,14 +1,22 @@
-export const addCard = () => {
+export const addCard = (payload) => {
+	const content = { cardId: payload.cardId, text: payload.text };
 	return {
 		type: "ADD_CARD",
+		...content,
 	};
 };
-let nextTodoId = 0;
-export const addToDo = (text) => {
+export const editCardTitle = (payload) => {
+	const content = { cardId: payload.cardId, text: payload.text };
+	return {
+		type: "EDIT_CARD_TITLE",
+		...content,
+	};
+};
+export const addToDo = (payload) => {
+	const content = { text: payload.text };
 	return {
 		type: "ADD_TODO",
-		id: nextTodoId++,
-		text,
+		...content,
 	};
 };
 export const setVisibilityFilter = (filter) => {

@@ -1,10 +1,14 @@
+// Default
 import React from "react";
-import CategoryView from "./CategoryView";
+// CSS
 import "./App.css";
+import "react-awesome-button/dist/styles.css";
+// Components
+import Categories from "./Categories";
 
 const App = () => (
 	<main>
-		<CategoryView />
+		<Categories />
 	</main>
 );
 

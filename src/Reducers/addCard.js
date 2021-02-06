@@ -6,8 +6,9 @@ const addCard = (state = [], action) => {
 				{
 					cardID: state[state.length - 1]
 						? state[state.length - 1].cardID + 1
-						: 1,
-					completed: false,
+						: 0,
+					text: action.text,
+					active: true,
 				},
 			];
 		default:
