@@ -23,6 +23,7 @@ const Categories = (props) => {
 				text: cardTitle,
 			};
 			props.dispatch(addCard(content));
+			setCardTitle("");
 		}
 	};
 	return (
