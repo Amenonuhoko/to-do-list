@@ -24,8 +24,8 @@ const ToDoList = () => {
 					className="Category buttons"
 					style={{ display: "flex", justifyContent: "space-between" }}
 				>
-					<AwesomeButton type="secondary"> Category</AwesomeButton>
-					<AwesomeButton type="secondary"> Finished </AwesomeButton>
+					<AwesomeButton type="secondary"> :)</AwesomeButton>
+					<AwesomeButton type="secondary"> F </AwesomeButton>
 				</div>
 			</div>
 			{/* <div> IF ELSE HERE </div> */}

@@ -85,8 +85,8 @@ const Cards = (props) => {
 						)}
 					</div>
 				</div>
+				<div>{collapse ? <ToDo /> : null}</div>
 			</div>
-			<div>{collapse ? <ToDo /> : null}</div>
 		</div>
 	);
 };
