@@ -1,18 +1,40 @@
+/* LAYER 1 */
 .card-container {
-	min-height: 200px;
+	box-sizing: border-box;
 	display: flex;
+	flex-direction: column;
+
 	/* background-color: #282c34; */
 	background-color: #f5f5f5;
-	padding: 20px 20px;
-	flex-direction: column;
 	box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
 		rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
 	margin-bottom: 5px;
+	min-height: 200px;
 }
+/* LAYER 2 */
 .selected-card {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+
+	border-top: 5px solid;
+	margin: 30px 20px;
+	padding-top: 10px;
+}
+/* LAYER 3 */
+.top {
+	display: flex;
+	flex-direction: column;
+}
+.bottom {
+	display: flex;
 	justify-content: space-around;
+}
+/* LAYER 4 */
+.card-header {
+	align-self: flex-end;
+	display: flex;
 }
 .left {
 	display: flex;
@@ -24,13 +46,12 @@ input {
 	background: transparent;
 	font-family: "Poppins", sans-serif;
 	color: black;
-	margin-left: 20px;
 	font-size: 20px;
 }
 .input input {
 	font-size: 40px;
-	width: 300px;
-	margin-left: 40px;
+}
+.right {
 }
 
 /* BUTTON */
@@ -47,9 +68,8 @@ input {
 .button {
 	position: relative;
 	top: 50%;
-	width: 180px;
+	width: 100px;
 	height: 50px;
-	margin: 5px auto 20px auto;
 	overflow: hidden;
 	background-color: #23252e;
 	border-radius: 4px;
@@ -80,15 +100,15 @@ input {
 #active-button .knobs:after,
 #active-button .knobs span {
 	position: absolute;
-	top: 4px;
-	width: 80px;
-	height: 24px;
+	top: 5px;
+	width: 20px;
+	height: 40px;
 	font-size: 18px;
 	font-weight: bold;
 	text-align: center;
-	padding: 9px 4px;
+	padding: 0px 0px;
 	border-radius: 4px;
-	transition: 0.3s ease all;
+	transition: 0.3s ease-out all;
 }
 
 #active-button .knobs:before,
@@ -97,26 +117,18 @@ input {
 	z-index: 1;
 }
 
-#active-button .knobs:before {
-	left: 4px;
-}
-
-#active-button .knobs:after {
-	right: 4px;
-}
-
 #active-button .knobs span {
-	width: 73px;
-	left: 93px;
-	background-color: #03a9f4;
+	width: 45px;
+	left: 51px;
+	background-color: white;
 	z-index: 2;
 }
 
 #active-button .checkbox:checked + .knobs span {
 	left: 4px;
-	background-color: #f44336;
+	background-color: gray;
 }
 
 #active-button .checkbox:checked ~ .layer {
-	background-color: #1b1d24;
+	background-color: #383c4b;
 }

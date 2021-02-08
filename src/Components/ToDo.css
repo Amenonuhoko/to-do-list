@@ -4,7 +4,6 @@ ul {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	margin: 10px 40px;
 }
 .todos-container {
 	display: flex;

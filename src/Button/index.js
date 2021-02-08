@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Button.css";
 
 function Button(props) {
-	const [size] = useState(props.size);
-	const [variant] = useState(props.variant);
 	return (
-		<button
-			className={`btn btn-${variant} btn-${size} `}
-			onClick={props.onClick}
-		>
-			{props.content}
-		</button>
+		<div className="btn-container">
+			<button
+				className={`btn btn-${props.variant} btn-${props.size} `}
+				onClick={props.onClick}
+			>
+				{props.content}
+			</button>
+		</div>
 	);
 }
 export default Button;

@@ -12,7 +12,7 @@
 	background-color: #282c34;
 } */
 .container {
-	margin: 20px 40px;
+	margin: 10px 20px;
 }
 .add-card-button {
 	display: flex;
@@ -21,5 +21,5 @@
 	margin: 20px 20px;
 }
 .add-card-button input {
-	font-size: 80px;
+	font-size: 30px;
 }

@@ -9,19 +9,20 @@ import "./Cards.css";
 import { editCardTitle } from "../Actions";
 // Component
 import ToDo from "./ToDo";
+import Button from "../Button";
 
 const Cards = (props) => {
 	// STATES
 	const [collapse, setCollapse] = useState(false);
-	const [completed, setCompleted] = useState(false);
+	// const [completed, setCompleted] = useState(false);
 	const [title, setTitle] = useState(props.title[props.id].text);
 	// HANDLE
 	const handleClick = () => {
 		setCollapse(collapse ? false : true);
 	};
-	const handleComplete = () => {
-		setCompleted(completed ? false : true);
-	};
+	// const handleComplete = () => {
+	// 	setCompleted(completed ? false : true);
+	// };
 	const handleChange = (e) => {
 		setTitle(e.target.value);
 	};
@@ -38,54 +39,60 @@ const Cards = (props) => {
 	return (
 		<div className="card-container">
 			<div className="selected-card">
-				<div className="left">
-					<div className="hide-button">
-						<AwesomeButton onPress={handleClick} size="icon">
-							{collapse ? "-" : "+"}
-						</AwesomeButton>
+				<div className="top">
+					<div className="card-header">
+						<h3>0{props.id}.</h3>
+						<Button size="small" variant="close" content="X" />
 					</div>
-					<div className="input">
-						<input
-							name="title"
-							type="text"
-							autoComplete="off"
-							value={title}
-							onChange={handleChange}
-							onKeyDown={handlePress}
-						></input>
-					</div>
-				</div>
-				<div className="right">
-					<div className="active-state" style={{ display: "flex" }}>
-						<div className="button b2" id="active-button">
-							<input type="checkbox" className="checkbox" />
-							<div className="knobs">
-								<span></span>
-							</div>
-							<div className="layer"></div>
+					<div className="left">
+						<div className="hide-button">
+							<Button
+								onClick={handleClick}
+								size="small"
+								content={collapse ? "-" : "+"}
+							/>
+						</div>
+						<div className="input">
+							<input
+								name="title"
+								type="text"
+								autoComplete="off"
+								value={title}
+								onChange={handleChange}
+								onKeyDown={handlePress}
+							></input>
 						</div>
 					</div>
-					<div style={{ display: "flex", justifyContent: "center" }}>
-						{completed ? (
-							<AwesomeButton
-								type="secondary"
-								size="medium"
-								onPress={handleComplete}
-							>
-								COMPLETED
-							</AwesomeButton>
-						) : (
-							<AwesomeButton
-								type="primary"
-								size="medium"
-								onPress={handleComplete}
-							>
-								NOT COMPLETED
-							</AwesomeButton>
-						)}
-					</div>
+					<div className="right">{collapse ? <ToDo /> : null}</div>
 				</div>
-				<div>{collapse ? <ToDo /> : null}</div>
+				<div className="bottom">
+					<div className="active-button">
+						<div className="active-state" style={{ display: "flex" }}>
+							<div className="button b2" id="active-button">
+								<input type="checkbox" className="checkbox" />
+								<div className="knobs">
+									<span></span>
+								</div>
+								<div className="layer"></div>
+							</div>
+						</div>
+					</div>
+					{/* <div>
+						{completed ? (
+							<Button
+								size="large"
+								variant="complete"
+								onClick={handleComplete}
+							/>
+						) : (
+							<Button
+								size="large"
+								variant="incomplete"
+								onClick={handleComplete}
+							/>
+						)}
+					</div> */}
+				</div>
 			</div>
 		</div>
 	);
@@ -94,6 +101,7 @@ const Cards = (props) => {
 const mapStateToProps = (state) => {
 	return {
 		title: state.addCard,
+		todos: state.addToDo,
 	};
 };
 
