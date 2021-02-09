@@ -45,7 +45,7 @@ const Categories = (props) => {
 				</div>
 			</div>
 			{props.cards.map((el, i) => {
-				return <Cards key={i} id={el.cardID} />;
+				return <Cards key={i} id={el.id} title={el.text} />;
 			})}
 		</div>
 	);

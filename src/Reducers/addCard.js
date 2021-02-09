@@ -4,13 +4,13 @@ const addCard = (state = [], action) => {
 			return [
 				...state,
 				{
-					cardID: state[state.length - 1]
-						? state[state.length - 1].cardID + 1
-						: 0,
+					id: state[state.length - 1] ? state[state.length - 1].id + 1 : 0,
 					text: action.text,
 					active: true,
 				},
 			];
+		case "DELETE_CARD":
+			return state.filter((card) => card.id !== action.id);
 		default:
 			return state;
 	}

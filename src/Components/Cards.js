@@ -1,12 +1,12 @@
 // Default
 import React, { useState } from "react";
-import { AwesomeButton } from "react-awesome-button";
 import { connect } from "react-redux";
 // CSS
 import "react-awesome-button/dist/styles.css";
 import "./Cards.css";
 // Redux
 import { editCardTitle } from "../Actions";
+import { deleteCard } from "../Actions";
 // Component
 import ToDo from "./ToDo";
 import Button from "../Button";
@@ -14,11 +14,14 @@ import Button from "../Button";
 const Cards = (props) => {
 	// STATES
 	const [collapse, setCollapse] = useState(false);
+	const [title, setTitle] = useState(props.title);
 	// const [completed, setCompleted] = useState(false);
-	const [title, setTitle] = useState(props.title[props.id].text);
 	// HANDLE
-	const handleClick = () => {
+	const handleCollapse = () => {
 		setCollapse(collapse ? false : true);
+	};
+	const handleDelete = () => {
+		props.dispatch(deleteCard(props.id));
 	};
 	// const handleComplete = () => {
 	// 	setCompleted(completed ? false : true);
@@ -29,7 +32,7 @@ const Cards = (props) => {
 	const handlePress = (e) => {
 		if (e.key === "Enter") {
 			const content = {
-				cardID: props.id,
+				id: props.id,
 				text: title,
 			};
 			props.dispatch(editCardTitle(content));
@@ -42,12 +45,18 @@ const Cards = (props) => {
 				<div className="top">
 					<div className="card-header">
 						<h3>0{props.id}.</h3>
-						<Button size="small" variant="close" content="X" />
+						{console.log(props.id)}
+						<Button
+							size="small"
+							variant="close"
+							content="X"
+							onClick={handleDelete}
+						/>
 					</div>
 					<div className="left">
 						<div className="hide-button">
 							<Button
-								onClick={handleClick}
+								onClick={handleCollapse}
 								size="small"
 								content={collapse ? "-" : "+"}
 							/>
@@ -77,21 +86,6 @@ const Cards = (props) => {
 							</div>
 						</div>
 					</div>
-					{/* <div>
-						{completed ? (
-							<Button
-								size="large"
-								variant="complete"
-								onClick={handleComplete}
-							/>
-						) : (
-							<Button
-								size="large"
-								variant="incomplete"
-								onClick={handleComplete}
-							/>
-						)}
-					</div> */}
 				</div>
 			</div>
 		</div>
@@ -100,7 +94,7 @@ const Cards = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		title: state.addCard,
+		cards: state,
 		todos: state.addToDo,
 	};
 };

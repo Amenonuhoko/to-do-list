@@ -1,8 +1,14 @@
 export const addCard = (payload) => {
-	const content = { cardId: payload.cardId, text: payload.text };
+	const content = { id: payload.id, text: payload.text };
 	return {
 		type: "ADD_CARD",
 		...content,
+	};
+};
+export const deleteCard = (id) => {
+	return {
+		type: "DELETE_CARD",
+		id,
 	};
 };
 export const editCardTitle = (payload) => {
