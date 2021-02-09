@@ -1,5 +1,4 @@
 // Default
-import { AwesomeButton } from "react-awesome-button";
 import { connect } from "react-redux";
 // CSS
 import "react-awesome-button/dist/styles.css";

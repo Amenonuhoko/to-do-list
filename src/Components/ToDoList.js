@@ -1,4 +1,3 @@
-import { AwesomeButton } from "react-awesome-button";
 import { connect } from "react-redux";
 import Button from "../Button";
 // CSS
