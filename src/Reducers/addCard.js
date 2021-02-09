@@ -4,7 +4,7 @@ const addCard = (state = [], action) => {
 			return [
 				...state,
 				{
-					id: state[state.length - 1] ? state[state.length - 1].id + 1 : 0,
+					id: action.id,
 					text: action.text,
 					active: true,
 				},

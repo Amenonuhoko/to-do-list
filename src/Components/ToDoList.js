@@ -6,20 +6,18 @@ import "./ToDoList.css";
 
 const ToDoList = () => {
 	return (
-		<div>
-			<div className="selected-list">
-				<div className="left-buttons">
-					<div>
-						<Button size="smaller" variant="remove" content="X" />
-					</div>
-					<div>
-						<Button size="smaller" content="+" />
-					</div>
+		<div className="selected-list">
+			<div className="left-todo">
+				<div>
+					<Button size="smaller" variant="remove" content="X" />
 				</div>
-				<div className="right">
-					<div className="title">
-						<input placeholder="Things To Do" type="text"></input>
-					</div>
+				<div>
+					<Button size="smaller" content="+" />
+				</div>
+			</div>
+			<div className="right-todo">
+				<div className="title">
+					<input placeholder="Things To Do" type="text"></input>
 				</div>
 			</div>
 		</div>

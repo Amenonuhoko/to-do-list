@@ -45,7 +45,6 @@ const Cards = (props) => {
 				<div className="top">
 					<div className="card-header">
 						<h3>0{props.id}.</h3>
-						{console.log(props.id)}
 						<Button
 							size="small"
 							variant="close"

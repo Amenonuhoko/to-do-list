@@ -1,5 +1,6 @@
+let idCount = 1;
 export const addCard = (payload) => {
-	const content = { id: payload.id, text: payload.text };
+	const content = { id: idCount++, text: payload.text };
 	return {
 		type: "ADD_CARD",
 		...content,

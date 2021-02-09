@@ -28,8 +28,8 @@ const ToDo = (props) => {
 				<li>
 					<div className="new-list-button">
 						<Button
-							size="small"
-							variant="close"
+							size="smaller"
+							variant="remove"
 							onClick={handleClick}
 							content="+"
 						/>
