@@ -16,9 +16,9 @@ const Cards = (props) => {
 	// STATES
 	const [collapse, setCollapse] = useState(false);
 	const [title, setTitle] = useState(props.title);
-	const cross = <i class="fas fa-times"></i>;
-	const plus = <i class="fas fa-plus"></i>;
-	const minus = <i class="fas fa-minus"></i>;
+	const cross = <i className="fas fa-times"></i>;
+	const plus = <i className="fas fa-plus"></i>;
+	const minus = <i className="fas fa-minus"></i>;
 	// HANDLE
 	const handleCollapse = () => {
 		setCollapse(collapse ? false : true);
