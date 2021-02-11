@@ -1,12 +1,10 @@
 import { combineReducers } from "redux";
-import addToDo from "./addToDo";
 import visibilityFilter from "./visibilityFilter";
-import addCard from "./addCard";
+import Cards from "./Cards";
 import editTitle from "./editTitle";
 
 export default combineReducers({
-	addCard,
-	addToDo,
+	Cards,
 	editTitle,
 	visibilityFilter,
 });

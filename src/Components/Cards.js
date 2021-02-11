@@ -10,12 +10,15 @@ import { deleteCard } from "../Actions";
 // Component
 import ToDo from "./ToDo";
 import Button from "../Button";
+import Toggle from "./Toggle";
 
 const Cards = (props) => {
 	// STATES
 	const [collapse, setCollapse] = useState(false);
 	const [title, setTitle] = useState(props.title);
-	// const [completed, setCompleted] = useState(false);
+	const cross = <i class="fas fa-times"></i>;
+	const plus = <i class="fas fa-plus"></i>;
+	const minus = <i class="fas fa-minus"></i>;
 	// HANDLE
 	const handleCollapse = () => {
 		setCollapse(collapse ? false : true);
@@ -23,13 +26,10 @@ const Cards = (props) => {
 	const handleDelete = () => {
 		props.dispatch(deleteCard(props.id));
 	};
-	// const handleComplete = () => {
-	// 	setCompleted(completed ? false : true);
-	// };
 	const handleChange = (e) => {
 		setTitle(e.target.value);
 	};
-	const handlePress = (e) => {
+	const handleEnter = (e) => {
 		if (e.key === "Enter") {
 			const content = {
 				id: props.id,
@@ -48,7 +48,7 @@ const Cards = (props) => {
 						<Button
 							size="small"
 							variant="close"
-							content="X"
+							content={cross}
 							onClick={handleDelete}
 						/>
 					</div>
@@ -57,7 +57,7 @@ const Cards = (props) => {
 							<Button
 								onClick={handleCollapse}
 								size="small"
-								content={collapse ? "-" : "+"}
+								content={collapse ? minus : plus}
 							/>
 						</div>
 						<div className="input">
@@ -67,24 +67,16 @@ const Cards = (props) => {
 								autoComplete="off"
 								value={title}
 								onChange={handleChange}
-								onKeyDown={handlePress}
+								onKeyDown={handleEnter}
 							></input>
 						</div>
 					</div>
-					<div className="right">{collapse ? <ToDo /> : null}</div>
+					<div className="right">
+						{collapse ? <ToDo state={collapse} id={props.id} /> : null}
+					</div>
 				</div>
 				<div className="bottom">
-					<div className="active-button">
-						<div className="active-state" style={{ display: "flex" }}>
-							<div className="button b2" id="active-button">
-								<input type="checkbox" className="checkbox" />
-								<div className="knobs">
-									<span></span>
-								</div>
-								<div className="layer"></div>
-							</div>
-						</div>
-					</div>
+					<Toggle />
 				</div>
 			</div>
 		</div>

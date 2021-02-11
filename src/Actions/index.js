@@ -1,6 +1,5 @@
-let idCount = 1;
 export const addCard = (payload) => {
-	const content = { id: idCount++, text: payload.text };
+	const content = { id: payload.id, text: payload.text };
 	return {
 		type: "ADD_CARD",
 		...content,
@@ -19,10 +18,30 @@ export const editCardTitle = (payload) => {
 		...content,
 	};
 };
+let toDoId = 1;
 export const addToDo = (payload) => {
-	const content = { text: payload.text };
+	const content = { id: toDoId++ };
 	return {
 		type: "ADD_TODO",
+		...content,
+	};
+};
+let currentId = 1;
+export const addToDoList = (payload) => {
+	const content = {
+		id: payload.id,
+		text: payload.text,
+		current: currentId++,
+	};
+	return {
+		type: "ADD_TODO_LIST",
+		...content,
+	};
+};
+export const removeToDo = (payload) => {
+	const content = { id: payload.id, current: payload.current };
+	return {
+		type: "REMOVE_TODO",
 		...content,
 	};
 };

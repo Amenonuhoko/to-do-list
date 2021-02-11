@@ -8,5 +8,18 @@ ul {
 .todos-container {
 	display: flex;
 	flex-direction: column;
-	align-content: space-evenly;
+	justify-content: center;
+	align-content: center;
+}
+.todo-input {
+	display: flex;
+	justify-content: center;
+	text-justify: auto;
+}
+.todo-input span {
+	border-bottom: 1px dotted;
+}
+.todo-list {
+	display: flex;
+	justify-content: space-between;
 }

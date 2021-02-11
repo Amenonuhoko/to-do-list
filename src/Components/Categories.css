@@ -12,7 +12,8 @@
 	background-color: #282c34;
 } */
 .container {
-	margin: 10px 20px;
+	margin: 20px 30px;
+	width: 100%;
 }
 .add-card-button {
 	display: flex;

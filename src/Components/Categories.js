@@ -44,6 +44,7 @@ const Categories = (props) => {
 					></input>
 				</div>
 			</div>
+
 			{props.cards.map((el, i) => {
 				return <Cards key={i} id={el.id} title={el.text} />;
 			})}
@@ -53,16 +54,8 @@ const Categories = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		cards: state.addCard,
+		cards: state.Cards,
 	};
 };
 
 export default connect(mapStateToProps)(Categories);
-
-// const SubList = () => {
-// 	return (
-// 		<ul>
-// 			<li></li>
-// 		</ul>
-// 	);
-// };
