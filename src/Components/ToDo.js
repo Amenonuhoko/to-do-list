@@ -31,17 +31,15 @@ const ToDo = (props) => {
 	return (
 		<div className="todos-container">
 			<div className="todo-input">
-				<span>
-					<input
-						name="title"
-						type="text"
-						autoComplete="off"
-						placeholder="What are we doing?"
-						value={toDos}
-						onChange={handleChange}
-						onKeyDown={handlePress}
-					></input>
-				</span>
+				<input
+					name="title"
+					type="text"
+					autoComplete="off"
+					placeholder="What are we doing?"
+					value={toDos}
+					onChange={handleChange}
+					onKeyDown={handlePress}
+				></input>
 			</div>
 			<ul>
 				{props.list.content.map((el, i) => {
