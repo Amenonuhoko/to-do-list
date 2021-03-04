@@ -1,143 +1,140 @@
 /* LAYER 1 */
 .card-container {
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 
-	/* background-color: #282c34; */
-	background-color: #f5f5f5;
-	/* box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+  /* background-color: #282c34; */
+  background-color: #f5f5f5;
+  /* box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
 		rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px; */
-	box-shadow: 0 2em 1em -0.5rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2em 1em -0.5rem rgba(0, 0, 0, 0.5);
 
-	border: 0.1px solid rgba(0, 0, 0, 0.2);
+  border: 0.1px solid rgba(0, 0, 0, 0.2);
 
-	margin: 5px 10px;
-	min-height: 200px;
+  margin: 5px 10px;
+  min-height: 200px;
 }
 /* LAYER 2 */
 .selected-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-	border-top: 4px solid black;
-	padding: 5px 10px;
-	margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 10px;
+  margin: 20px 10px;
 }
 /* LAYER 3 */
 .top {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .bottom {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 /* LAYER 4 */
 .card-header {
-	align-self: flex-end;
-	display: flex;
-	margin-right: 40px;
+  align-self: flex-end;
+  display: flex;
+  margin-right: 40px;
 }
 .left {
-	display: flex;
-	margin-bottom: 30px;
+  display: flex;
+  margin-bottom: 30px;
 }
 input {
-	width: 75%;
-	border: 0;
-	outline: 0;
-	background: transparent;
-	font-family: "Poppins", sans-serif;
-	color: black;
-	font-size: 20px;
+  width: 75%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 20px;
 }
 .input input {
-	padding-left: 10px;
-	font-size: 40px;
-	color: rgb(116, 43, 43);
+  padding-left: 10px;
+  font-size: 40px;
+  color: rgb(116, 43, 43);
 }
 .input {
-	border-left: 4px solid black;
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 /* BUTTON */
 .button-cover,
 .knobs,
 .layer {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .button {
-	position: relative;
-	top: 50%;
-	width: 100px;
-	height: 50px;
-	overflow: hidden;
-	background-color: rgb(73, 73, 73);
-	border-radius: 4px;
+  position: relative;
+  top: 50%;
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+  background-color: rgb(73, 73, 73);
+  border-radius: 4px;
 }
 
 .checkbox {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	opacity: 0;
-	cursor: pointer;
-	z-index: 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
 }
 
 .knobs {
-	z-index: 2;
+  z-index: 2;
 }
 
 .layer {
-	width: 100%;
-	transition: 0.3s ease all;
-	z-index: 1;
+  width: 100%;
+  transition: 0.3s ease all;
+  z-index: 1;
 }
 
 #active-button .knobs:before,
 #active-button .knobs:after,
 #active-button .knobs span {
-	position: absolute;
-	top: 5px;
-	width: 20px;
-	height: 40px;
-	font-size: 18px;
-	font-weight: bold;
-	text-align: center;
-	padding: 0px 0px;
-	border-radius: 4px;
-	transition: 0.3s ease-out all;
+  position: absolute;
+  top: 5px;
+  width: 20px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 0px;
+  border-radius: 4px;
+  transition: 0.3s ease-out all;
 }
 
 #active-button .knobs:before,
 #active-button .knobs:after {
-	color: #4e4e4e;
-	z-index: 1;
+  color: #4e4e4e;
+  z-index: 1;
 }
 
 #active-button .knobs span {
-	width: 45px;
-	left: 51px;
-	background-color: black;
-	z-index: 2;
+  width: 45px;
+  left: 51px;
+  background-color: black;
+  z-index: 2;
 }
 
 #active-button .checkbox:checked + .knobs span {
-	left: 4px;
-	background-color: white;
+  left: 4px;
+  background-color: white;
 }
 
 #active-button .checkbox:checked ~ .layer {
-	background-color: black;
+  background-color: black;
 }

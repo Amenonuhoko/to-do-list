@@ -6,19 +6,25 @@ import "./index.css";
 import App from "./Components/App";
 import reportWebVitals from "./reportWebVitals";
 import rootReducer from "./Reducers";
+import { loadState, saveState } from "./localStorage";
 
+const persistedState = loadState();
 const store = createStore(
-	rootReducer,
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  rootReducer,
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 ReactDOM.render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<App />
-		</Provider>
-	</React.StrictMode>,
-	document.getElementById("root")
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,25 +1,25 @@
 ul {
-	list-style-type: none;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .todos-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 .todo-input {
-	display: flex;
-	justify-content: center;
-	text-justify: auto;
+  display: flex;
+  justify-content: center;
+  text-justify: auto;
 }
-.todo-input span {
-	border-bottom: 1px dotted;
+.todo-input input {
+  border-bottom: 1px dotted;
 }
 .todo-list {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
